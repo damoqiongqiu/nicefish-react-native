@@ -1,5 +1,9 @@
 ## nicefish-react-native
 
+### 简介
+
+** 此项目正在开发过程中。 **
+
 ### 启动项目
 
     npx expo start
