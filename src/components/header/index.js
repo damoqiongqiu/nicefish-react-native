@@ -1,13 +1,11 @@
 import React from 'react';
 import { useTheme, Appbar, TouchableRipple, Switch } from 'react-native-paper';
-import { PreferencesContext } from './PreferencesContext';
+import { PreferencesContext } from '../shared/preferences-context';
 import { useRoute } from '@react-navigation/native';
 
-const Header = (props) => {
-    const route = useRoute();
+const NFHeader = (props) => {
     const theme = useTheme();
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
-
     return (
         <Appbar.Header
             theme={{
@@ -16,7 +14,8 @@ const Header = (props) => {
                 },
             }}
         >
-            <Appbar.Content title={route?.name} />
+            {/* <Appbar.BackAction /> */}
+            <Appbar.Content title="Header" />
             <Switch
                 color={'red'}
                 value={isThemeDark}
@@ -26,4 +25,4 @@ const Header = (props) => {
     );
 };
 
-export default Header;
+export default NFHeader;

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { BottomNavigation, Text } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // 导入图标库
+import { View } from 'react-native';
+import { BottomNavigation } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const HomeRoute = () => <Text>Music</Text>;
-const FriendsRoute = () => <Text>Albums</Text>;
-const WriteRoute = () => <Text>Albums</Text>;
-const RecentsRoute = () => <Text>Recents</Text>;
-const MessageRoute = () => <Text>Notifications</Text>;
+import Home from '../home';
+import Friends from '../friends';
+import Write from '../write';
+import Message from '../message';
+import My from '../my';
 
 const NFBottomNav = () => {
     const [index, setIndex] = useState(0);
@@ -20,11 +21,11 @@ const NFBottomNav = () => {
     ]);
 
     const renderScene = BottomNavigation.SceneMap({
-        home: HomeRoute,
-        friends: FriendsRoute,
-        write: WriteRoute,
-        message: MessageRoute,
-        my: RecentsRoute,
+        home: Home,
+        friends: Friends,
+        write: Write,
+        message: Message,
+        my: My,
     });
 
     return (
@@ -40,6 +41,7 @@ const NFBottomNav = () => {
                             label={route.title}
                             icon={() => <Icon name={route.icon} size={24} color={i === index ? '#007AFF' : '#BDBDBD'} />}
                             onPress={() => setIndex(i)}
+
                         />
                     ))}
                 </View>
