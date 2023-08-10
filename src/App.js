@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { registerRootComponent } from 'expo';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -17,7 +18,7 @@ import EmojiSticker from './components/EmojiSticker';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
-export default function App() {
+function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [showAppOptions, setShowAppOptions] = useState(false);
   const [pickedEmoji, setPickedEmoji] = useState(null);
@@ -150,3 +151,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   }
 });
+registerRootComponent(App);
