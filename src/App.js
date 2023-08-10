@@ -1,21 +1,16 @@
 import React from 'react';
 import { registerRootComponent } from 'expo';
-import { Card, Title, Paragraph, List, PaperProvider, adaptNavigationTheme } from 'react-native-paper';
-import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity } from 'react-native';
+import {
+  PaperProvider, adaptNavigationTheme, MD3DarkTheme, MD3LightTheme
+} from 'react-native-paper';
 import {
   NavigationContainer,
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
-import {
-  MD3DarkTheme,
-  MD3LightTheme,
-} from 'react-native-paper';
-import merge from 'deepmerge';
 
 import { PreferencesContext } from './components/PreferencesContext';
-import Header from './components/Header';
+import NFBottomNav from './components/bottom-nav';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
@@ -39,41 +34,10 @@ const CombinedDarkTheme = {
   },
 };
 
-const Stack = createStackNavigator();
-
-const HomeScreen = (props) => {
-  const { navigation } = props;
-  const title = "???";
-  const content = "???";
-  return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation?.push('Details', {
-          title,
-          content,
-        })
-      }
-    >
-      <Card>
-        <Card.Content>
-          <Title>{title}</Title>
-          <Paragraph>{content}</Paragraph>
-        </Card.Content>
-      </Card>
-    </TouchableOpacity>
-  );
-}
-
-const DetailsScreen = (props) => {
-  const { title, content } = props?.route?.params;
-  return (
-    <List.Section>
-      <List.Subheader>{title}</List.Subheader>
-      <List.Item title={content} />
-    </List.Section>
-  );
-};
-
+/**
+ * @author 大漠穷秋
+ * @date 2023-08-10 21:08:34
+ */
 function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
@@ -95,10 +59,7 @@ function App() {
     <PreferencesContext.Provider value={preferences}>
       <PaperProvider theme={theme}>
         <NavigationContainer theme={theme}>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={HomeScreen} options={{ header: () => <Header title="Home" /> }} />
-            <Stack.Screen name="Details" component={DetailsScreen} options={{ header: () => <Header title="Details" /> }} />
-          </Stack.Navigator>
+          <NFBottomNav></NFBottomNav>
         </NavigationContainer>
       </PaperProvider>
     </PreferencesContext.Provider>
