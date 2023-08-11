@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View } from 'react-native';
-import { Text } from 'react-native-paper';
 import NFHeader from '../header';
 import commonStyles from '../shared/common-styles';
+import PostList from './post-list';
 
-const My = () => {
+const Home = (props) => {
     return (
         <View style={commonStyles.container}>
             <NFHeader />
-            <Text style={commonStyles.contentHeader}>My</Text>
+            <PostList></PostList>
         </View>
     );
 };
-export default My;
+export default Home;

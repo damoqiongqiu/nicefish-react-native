@@ -3,8 +3,8 @@ import { registerRootComponent } from 'expo';
 import { PaperProvider, adaptNavigationTheme, MD3DarkTheme, MD3LightTheme } from 'react-native-paper';
 import { NavigationContainer, DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationDefaultTheme } from '@react-navigation/native';
 
-import { PreferencesContext } from './components/shared/preferences-context';
-import NFBottomNav from './components/bottom-nav';
+import { PreferencesContext } from './shared/preferences-context';
+import NFBottomNav from './shared/bottom-nav';
 
 /**
  * react-navigation 与 react-native-paper 的主题适配
@@ -36,7 +36,7 @@ const CombinedDarkTheme = {
  * @author 大漠穷秋
  * @date 2023-08-10 21:08:34
  */
-function App() {
+function App(props) {
   const [isThemeDark, setIsThemeDark] = useState(false);
 
   let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme;

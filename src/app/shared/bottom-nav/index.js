@@ -3,13 +3,13 @@ import { View } from 'react-native';
 import { BottomNavigation } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Home from '../home';
-import Friends from '../friends';
-import Write from '../write';
-import Message from '../message';
-import My from '../my';
+import Home from '../../home';
+import Friends from '../../friends';
+import Write from '../../write';
+import Message from '../../message';
+import My from '../../my';
 
-const NFBottomNav = () => {
+const NFBottomNav = (props) => {
     const [index, setIndex] = useState(0);
 
     const [routes] = useState([

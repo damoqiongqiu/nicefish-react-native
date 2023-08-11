@@ -4,12 +4,12 @@ import { Text } from 'react-native-paper';
 import NFHeader from '../header';
 import commonStyles from '../shared/common-styles';
 
-const Friends = () => {
+const Message = (props) => {
     return (
         <View style={commonStyles.container}>
             <NFHeader />
-            <Text style={commonStyles.contentHeader}>Friends</Text>
+            <Text style={commonStyles.contentHeader}>Message</Text>
         </View>
     );
 };
-export default Friends;
+export default Message;

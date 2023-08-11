@@ -4,7 +4,7 @@ import { Text } from 'react-native-paper';
 import NFHeader from '../header';
 import commonStyles from '../shared/common-styles';
 
-const Write = () => {
+const Write = (props) => {
     return (
         <View style={commonStyles.container}>
             <NFHeader />
