@@ -15,7 +15,7 @@ const NFBottomNav = (props) => {
     const [routes] = useState([
         { key: 'home', title: '首页', focusedIcon: 'home', unfocusedIcon: 'home-outline' },
         { key: 'friends', title: '关注', focusedIcon: 'heart', unfocusedIcon: 'heart-outline' },
-        { key: 'write', title: '创作', focusedIcon: 'pencil', unfocusedIcon: 'pencil-outline' },
+        { key: 'write', title: '创作', focusedIcon: 'plus-box', unfocusedIcon: 'plus-box-outline' },
         { key: 'message', title: '消息', focusedIcon: 'bell', unfocusedIcon: 'bell-outline' },
         { key: 'my', title: '我的', focusedIcon: 'account', unfocusedIcon: 'account-outline' },
     ]);
